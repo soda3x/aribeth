@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<HBox spacing="20" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.soda3x.aribeth.controllers.ModpackController">
+  <padding>
+    <Insets top="20" right="20" bottom="20" left="20" />
+  </padding>
+
+  <VBox spacing="10" prefWidth="250">
+    <Label text="Modpacks" styleClass="section-header" />
+    <ListView fx:id="modpackList" VBox.vgrow="ALWAYS" styleClass="aribeth-list" />
+    <Button text="Create a Modpack" maxWidth="Infinity" styleClass="action-button-primary" />
+  </VBox>
+
+  <VBox spacing="10" HBox.hgrow="ALWAYS">
+    <HBox alignment="CENTER_LEFT">
+      <Label fx:id="lblSelectedPack" text="Selected Pack Content" styleClass="section-header-small" />
+      <Region HBox.hgrow="ALWAYS" />
+      <Button text="Deploy Pack" styleClass="launch-button-small" />
+    </HBox>
+
+    <TableView fx:id="packContentsTable" VBox.vgrow="ALWAYS" styleClass="aribeth-table">
+      <columns>
+        <TableColumn fx:id="colPriority" text="Priority" prefWidth="80" />
+        <TableColumn fx:id="colModName" text="Mod Name" prefWidth="300" />
+      </columns>
+    </TableView>
+    <Label text="* Drag and drop to set override priority" styleClass="hint-text" />
+  </VBox>
+</HBox>

@@ -1,0 +1,16 @@
+{
+  "type": "java",
+  "name": "Launch Aribeth",
+  "request": "launch",
+  "mainClass": "com.soda3x.aribeth.Main", // Ensure this matches your main class
+  "vmArgs": "--module-path ${userHome}/.m2/repository/org/openjfx --add-modules javafx.controls,javafx.fxml",
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Main",
+      "request": "launch",
+      "mainClass": "com.soda3x.aribeth.Main",
+      "projectName": "aribeth"
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+.app-title {
+    -fx-font-family: "Neverwinter";
+    -fx-font-size: 32px;
+    -fx-max-width: infinity;
+    -fx-text-alignment: center;
+}
+
+.app-subtitle {
+    -fx-font-family: "Sans Serif";
+    -fx-font-size: 12px;
+    -fx-max-width: infinity;
+    -fx-text-alignment: center;
+}
+
+.section-header {
+    -fx-font-family: "Sans Serif";
+    -fx-font-size: 24px;
+    -fx-max-width: infinity;
+    -fx-text-alignment: center;
+}

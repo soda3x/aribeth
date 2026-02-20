@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.soda3x.aribeth.controllers.LibraryController">
+  <padding>
+    <Insets top="20" right="20" bottom="20" left="20" />
+  </padding>
+
+  <HBox alignment="CENTER_LEFT" spacing="15">
+    <Label text="Mod Library" styleClass="section-header" />
+    <HBox spacing="10.0" styleClass="action-bar" alignment="CENTER_LEFT">
+      <Button text="+ Add URL" styleClass="action-button-primary" />
+      <Button text="Check Updates" styleClass="action-button" />
+    </HBox>
+    <Region HBox.hgrow="ALWAYS" />
+    <TextField promptText="Search mods..." styleClass="search-field" prefWidth="250" />
+  </HBox>
+
+  <TableView fx:id="libraryTable" VBox.vgrow="ALWAYS" styleClass="aribeth-table">
+    <columns>
+      <TableColumn fx:id="colActive" text="Active" prefWidth="70" />
+      <TableColumn fx:id="colName" text="Name" prefWidth="300" />
+      <TableColumn fx:id="colType" text="Type" prefWidth="100" />
+      <TableColumn fx:id="colUpdate" text="Update" prefWidth="100" />
+    </columns>
+    <placeholder>
+      <Label text="No mods found. Add a Vault URL to begin the Ritual."
+        styleClass="placeholder-label" />
+    </placeholder>
+  </TableView>
+</VBox>

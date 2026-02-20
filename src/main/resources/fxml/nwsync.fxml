@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="15" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+  fx:controller="com.soda3x.aribeth.controllers.NWSyncController">
+  <padding>
+    <Insets top="20" right="20" bottom="20" left="20" />
+  </padding>
+
+  <VBox spacing="5">
+    <Label text="NWSync Explorer" styleClass="section-header" />
+    <Label text="Manage Persistent World data stored in your local vault." styleClass="hint-text" />
+  </VBox>
+
+  <TableView fx:id="syncTable" VBox.vgrow="ALWAYS" styleClass="aribeth-table">
+    <columns>
+      <TableColumn fx:id="colServer" text="Server Name" prefWidth="350" />
+      <TableColumn fx:id="colSize" text="Disk Usage" prefWidth="120" />
+      <TableColumn fx:id="colLastSeen" text="Last Visited" prefWidth="150" />
+    </columns>
+  </TableView>
+
+  <HBox spacing="10" alignment="CENTER_RIGHT">
+    <Label fx:id="lblTotalUsage" text="Total NWSync Usage: 0.0 GB" styleClass="usage-label" />
+    <Region HBox.hgrow="ALWAYS" />
+    <Button text="Purge Selected" styleClass="danger-button" />
+  </HBox>
+</VBox>
