@@ -18,3 +18,11 @@
     -fx-max-width: infinity;
     -fx-text-alignment: center;
 }
+
+.settings-hint {
+    -fx-font-family: "Sans Serif";
+    -fx-font-size: 10px;
+    -fx-max-width: infinity;
+    -fx-text-alignment: left;
+    -fx-wrap-text: true;
+}

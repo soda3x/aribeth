@@ -13,6 +13,8 @@
     <maven.compiler.target>21</maven.compiler.target>
     <javafx.version>21</javafx.version>
     <atlantafx.version>2.1.0</atlantafx.version>
+    <ormlite.version>6.1</ormlite.version>
+    <log4j.version>2.25.3</log4j.version>
   </properties>
 
   <dependencies>
@@ -33,6 +35,20 @@
       <artifactId>atlantafx-base</artifactId>
       <version>${atlantafx.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.j256.ormlite</groupId>
+      <artifactId>ormlite-core</artifactId>
+      <version>${ormlite.version}</version>
+      <scope>compile</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.logging.log4j</groupId>
+      <artifactId>log4j-core</artifactId>
+      <version>${log4j.version}</version>
+      <scope>compile</scope>
+  </dependency>
   </dependencies>
 
   <build>

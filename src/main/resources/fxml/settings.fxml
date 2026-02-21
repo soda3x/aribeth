@@ -3,26 +3,98 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.geometry.Insets?>
 
-<VBox spacing="10" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+
+<ScrollPane fitToWidth="true" xmlns="http://javafx.com/javafx/21"
+  xmlns:fx="http://javafx.com/fxml/1"
   fx:controller="com.soda3x.aribeth.controllers.SettingsController">
-  <padding>
-    <Insets top="20" right="20" bottom="20" left="20" />
-  </padding>
+  <content>
 
-  <HBox alignment="CENTER_LEFT" spacing="15">
-    <Label text="Settings" styleClass="section-header" />
-  </HBox>
+    <VBox spacing="10">
 
-  <VBox>
-    <HBox alignment="CENTER_LEFT" spacing="15">
-      <Label text="Theme" />
-      <ChoiceBox fx:id="themeChoiceBox">
-        <items>
-            <String fx:value="Dark" />
-            <String fx:value="Light" />
-        </items>
-      </ChoiceBox>
-    </HBox>
-  </VBox>
+      <padding>
+        <Insets top="20" right="20" bottom="20" left="20" />
+      </padding>
 
-</VBox>
+      <HBox alignment="CENTER_LEFT" spacing="15">
+        <Label text="Settings" styleClass="section-header" />
+      </HBox>
+
+      <Separator styleClass="gold-separator" />
+
+      <VBox spacing="15">
+        <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+          <Label text="Theme" />
+          <Region HBox.hgrow="ALWAYS" />
+          <ChoiceBox fx:id="themeChoiceBox" prefWidth="350" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+          <VBox>
+            <Label text="Neverwinter Nights EE Install Directory" />
+            <Label text="Override this path if not using Steam version (e.g. GOG or Standalone)"
+              styleClass="settings-hint" />
+          </VBox>
+
+          <Region HBox.hgrow="ALWAYS" />
+          <TextField fx:id="nwnInstallPath" promptText="Detecting Steam version"
+            prefWidth="350" />
+        </HBox>
+
+        <Separator styleClass="gold-separator" />
+
+        <HBox alignment="CENTER_LEFT" spacing="15">
+          <VBox>
+            <Label text="Advanced Settings" styleClass="section-header" />
+            <Label
+              text="Only change these if you know what you are doing or are a developer."
+              styleClass="settings-hint" />
+            <Label
+              text="Hint: For settings requiring paths, you can use $ARIBETH_INSTALL_DIR to represent the install directory of this tool."
+              styleClass="settings-hint" />
+          </VBox>
+        </HBox>
+
+        <Separator styleClass="gold-separator" />
+
+        <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+          <VBox>
+            <Label text="Staged Mods Directory" />
+            <Label text="Override where staged mods are downloaded (but not installed)"
+              styleClass="settings-hint" />
+          </VBox>
+          <Region HBox.hgrow="ALWAYS" />
+          <TextField fx:id="nwnInstallPath" promptText="\$ARIBETH_INSTALL_DIR/downloadedMods"
+            prefWidth="350" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="15" HBox.hgrow="ALWAYS">
+          <VBox>
+            <Label text="Database Path" />
+            <Label
+              text="Path to the SQLite database. Only change this if you know what you are doing, you may lose your mods / settings."
+              styleClass="settings-hint" />
+          </VBox>
+          <Region HBox.hgrow="ALWAYS" />
+          <TextField fx:id="dbPath" promptText="\$ARIBETH_INSTALL_DIR/database.db"
+            prefWidth="350" />
+        </HBox>
+      </VBox>
+
+      <Separator styleClass="gold-separator" />
+
+      <HBox alignment="CENTER_LEFT" spacing="15">
+        <VBox>
+          <Label text="About Aribeth" styleClass="section-header" />
+        </VBox>
+      </HBox>
+
+      <Separator styleClass="gold-separator" />
+
+      <Label text="Aribeth - Neverwinter Nights Enhanced Edition Mod Manager" />
+      <Label text="Version - X.y.z" />
+      <Label text="by soda3x" />
+
+      <Separator styleClass="gold-separator" />
+    </VBox>
+  </content>
+</ScrollPane>

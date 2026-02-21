@@ -1,5 +1,6 @@
 package com.soda3x.aribeth;
 
+import com.soda3x.aribeth.db.DatabaseManager;
 import com.soda3x.aribeth.util.ViewSwitcher;
 
 import atlantafx.base.theme.PrimerDark;
@@ -17,6 +18,9 @@ public class Main extends Application {
 
   @Override
   public void start(Stage stage) throws Exception {
+    
+    DatabaseManager.getInstance().init();
+
     Application.setUserAgentStylesheet(new PrimerDark().getUserAgentStylesheet());
     Font.loadFont(getClass().getResourceAsStream("/fonts/Neverwinter.otf"), 16);
     FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/main.fxml"));
@@ -35,7 +39,7 @@ public class Main extends Application {
 
   @Override
   public void stop() {
-
+    DatabaseManager.getInstance().close();
   }
 
   public static void main(String[] args) {

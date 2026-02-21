@@ -12,8 +12,8 @@
   <HBox alignment="CENTER_LEFT" spacing="15">
     <Label text="Mod Library" styleClass="section-header" />
     <HBox spacing="10.0" styleClass="action-bar" alignment="CENTER_LEFT">
-      <Button text="+ Add URL" styleClass="action-button-primary" />
-      <Button text="Check Updates" styleClass="action-button" />
+      <Button text="+ Add Mod" styleClass="action-button-primary" />
+      <Button text="Check for Updates" styleClass="action-button" />
     </HBox>
     <Region HBox.hgrow="ALWAYS" />
     <TextField promptText="Search mods..." styleClass="search-field" prefWidth="250" />
@@ -22,9 +22,19 @@
   <TableView fx:id="libraryTable" VBox.vgrow="ALWAYS" styleClass="aribeth-table">
     <columns>
       <TableColumn fx:id="colActive" text="Active" prefWidth="70" />
+      <TableColumn fx:id="colHealth">
+        <graphic>
+          <Label text="Health" prefWidth="70"> 
+            <tooltip>
+              <Tooltip
+                text="The tool will perform regular checks on mods to ensure the URL for the mod is still valid" />
+            </tooltip>
+          </Label>
+        </graphic>
+      </TableColumn>
       <TableColumn fx:id="colName" text="Name" prefWidth="300" />
       <TableColumn fx:id="colType" text="Type" prefWidth="100" />
-      <TableColumn fx:id="colUpdate" text="Update" prefWidth="100" />
+      <TableColumn fx:id="colUpdate" text="Version" prefWidth="100" />
     </columns>
     <placeholder>
       <Label text="No mods found. Add a Vault URL to begin the Ritual."
